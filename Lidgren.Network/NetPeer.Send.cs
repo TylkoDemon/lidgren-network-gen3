@@ -115,8 +115,8 @@ namespace Lidgren.Network
 					Recycle(msg);
 				throw new NetException("recipients must contain at least one item");
 			}
-			if (method == NetDeliveryMethod.Unreliable || method == NetDeliveryMethod.ReliableUnordered)
-				NetException.Assert(sequenceChannel == 0, "Delivery method " + method + " cannot use sequence channels other than 0!");
+			//if (method == NetDeliveryMethod.Unreliable || method == NetDeliveryMethod.ReliableUnordered)
+			//	NetException.Assert(sequenceChannel == 0, "Delivery method " + method + " cannot use sequence channels other than 0!");
 			if (msg.m_isSent)
 				throw new NetException("This message has already been sent! Use NetPeer.SendMessage() to send to multiple recipients efficiently");
 			msg.m_isSent = true;
